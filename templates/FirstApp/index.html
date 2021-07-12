@@ -1,0 +1,35 @@
+{% extends 'FirstApp/base.html' %}
+
+
+{% block body %}
+    
+    {% if student %}
+    
+    {% for i in student %}
+    
+   <a href="{% url 'crudapp:student_info' student_id=i.id%}">
+    <table style="color: aliceblue;" class="table bg-success">
+        <tr>
+            <td> 
+                 <p>{{i.first_name}}
+                    {{i.last_name}}</p>
+                    
+            </td>
+        </tr>
+    </table>
+   </a> 
+    
+   
+        
+    {% endfor %}
+        
+
+
+    {% else %}
+    <h3>No Students</h3>
+    {% endif %}
+
+    
+        
+{% endblock body %}
+    

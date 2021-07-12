@@ -1,0 +1,11 @@
+{% extends 'FirstApp/base.html' %}
+
+
+{% block body %}
+ <h5>Update</h5>
+ <form method="POST" action="">
+     {{student.as_p}}
+     {% csrf_token %}
+     <input type="submit" value="update">
+ </form>
+{% endblock body %}

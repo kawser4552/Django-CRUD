@@ -1,0 +1,21 @@
+{% extends 'FirstApp/base.html' %}
+
+
+{% block body %}
+
+<table style="color: aliceblue;" class="table bg-success">
+    <tr>
+         <td>{{student.id}}</td>
+             <tr> <td>Name : {{student.first_name}}
+                {{student.last_name}}</td></tr>
+                <tr> <td>Email : {{student.email}}</td></tr>
+                <tr><td>Phone : {{student.phone}}</td></tr>
+
+                
+        
+    </tr>
+</table>
+<a class="btn btn-success" href="{% url "crudapp:student_update" student_id=student.id %}">Update</a>
+<a class="btn btn-success" href="{% url "crudapp:student_delete" student_id=student.id %}">Delete</a>
+
+{% endblock body %}
